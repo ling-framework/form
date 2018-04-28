@@ -13,7 +13,7 @@ abstract class Form {
         $this->setRules();
         $results = null;
         // $_SERVER['CONTENT_TYPE'] is set when POST only
-        if (isset($_SERVER['CONTENT_TYPE']) && $_SERVER['CONTENT_TYPE'] === 'application/json') {
+        if (isset($_SERVER['CONTENT_TYPE']) && strpos($_SERVER['CONTENT_TYPE'], 'application/json') !== false) {
             $results = (array)json_decode(file_get_contents('php://input'));
         }
         if (!$results) {
