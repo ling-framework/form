@@ -28,7 +28,8 @@ abstract class Form {
         foreach ($this->sanitizeRules as $param => $rule) {
             $result = $results[$param];
             $result = is_string($result) ? trim($result) : $result;
-            $this->$param = ($result !== null && $result !== '') ? $result : $rule['default'];
+            $default = isset($rule['default']) ? $rule['default'] : null;
+            $this->$param = ($result !== null && $result !== '') ? $result : $default;
             $rule = $this->sanitizeRules[$param];
             if (isset($rule['required']) && $rule['required'] && !isset($results[$param])) {
                 $this->errors[$param] = array('required');
