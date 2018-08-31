@@ -26,7 +26,7 @@ abstract class Form {
 
     public function sanitizeAndRequiredCheck($results) {
         foreach ($this->sanitizeRules as $param => $rule) {
-            $result = $results[$param];
+            $result = isset($results[$param]) ? $results[$param] : null;
             $result = is_string($result) ? trim($result) : $result;
             $default = isset($rule['default']) ? $rule['default'] : null;
             $this->$param = ($result !== null && $result !== '') ? $result : $default;
