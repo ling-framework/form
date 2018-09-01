@@ -2,7 +2,7 @@
     "name": "ling-framework/form",
     "type": "framework",
     "version" : "0.0.1",
-    "description": "Legacy Is Not Good framework's Router",
+    "description": "Legacy Is Not Good framework's Form",
     "keywords": ["framework", "configuration"],
     "homepage": "https://github.com/ling-framework/form",
     "license": "MIT",

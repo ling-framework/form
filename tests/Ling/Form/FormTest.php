@@ -3,7 +3,6 @@
 namespace Ling\Form;
 
 use PHPUnit\Framework\TestCase;
-use function Ling\config;
 
 include 'UserForm.php';
 
